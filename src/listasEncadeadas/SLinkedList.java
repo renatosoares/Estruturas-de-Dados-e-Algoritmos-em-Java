@@ -1,5 +1,6 @@
 package listasEncadeadas;
 
+
 /** Lista simplismente encadeada . */
 public class SLinkedList {
 	protected Node head; // nodo cabeça da lista
@@ -24,6 +25,17 @@ public class SLinkedList {
 		v.setNext(null);
 		tail.setNext(v);
 		tail = v;
+		size = size + 1;
+	}
+	//Removendo um elemento de uma lista simplismente encadeada
+	public void removeFirst() {
+		if (head == null) {
+			System.out.println("a lista esta vazia!");
+		} 
+		Node t;
+		t = head;
+		head = head.getNext();
+		t.setNext(null);
 		size = size + 1;
 	}
 }

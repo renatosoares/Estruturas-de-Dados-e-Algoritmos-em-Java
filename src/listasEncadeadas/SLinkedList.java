@@ -27,7 +27,7 @@ public class SLinkedList {
 		tail = v;
 		size = size + 1;
 	}
-	//Removendo um elemento de uma lista simplismente encadeada
+	//Removendo um elemento de uma lista simplismente  encadeada
 	public void removeFirst() {
 		if (head == null) {
 			System.out.println("a lista esta vazia!");

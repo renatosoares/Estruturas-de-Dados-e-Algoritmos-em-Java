@@ -1,36 +1,36 @@
 package listasDuplamenteEncadeadas;
 
-/** Doubly linked list with nodes of type DNode storing strings. */
+/** Lista duplamente encadeada com nodos do tipo DNode que armazenam strings */
 public class DList {
 	protected int size; // number of elements
 	protected DNode header, trailer; // sentinels
 
-	/** Constructor that creates an empty list */
+	/** Construtor que cria uma lista vazia */
 	public DList() {
 		size = 0;
-		header = new DNode(null, null, null); // create header
-		trailer = new DNode(null, header, null); // create trailer
-		header.setNext(trailer); // make header and trailer point to each other
+		header = new DNode(null, null, null); // Cria cabeça
+		trailer = new DNode(null, header, null); // cria final
+		header.setNext(trailer); // faz a cabeça e o final apontarem um para o outro
 	}
 
-	/** Returns the number of elements in the list */
+	/** Retorna o número de elementos na lista */
 	public int size() {
 		return size;
 	}
 
-	/** Returns whether the list is empty */
+	/** Informa se a lista esta vazia */
 	public boolean isEmpty() {
 		return (size == 0);
 	}
 
-	/** Returns the first node of the list */
+	/** Retorna o primeiro nodo da lista */
 	public DNode getFirst() throws IllegalStateException {
 		if (isEmpty())
 			throw new IllegalStateException("List is empty");
 		return header.getNext();
 	}
 
-	/** Returns the last node of the list */
+	/** Retorna o último nodo da lista */
 	public DNode getLast() throws IllegalStateException {
 		if (isEmpty())
 			throw new IllegalStateException("List is empty");
@@ -38,8 +38,8 @@ public class DList {
 	}
 
 	/**
-	 * Returns the node before the given node v. An error occurs if v is the
-	 * header
+	 * Retorna o nodo que antecede um dado nodo V. Gera erro se V é a cabeça
+	 * 
 	 */
 	public DNode getPrev(DNode v) throws IllegalArgumentException {
 		if (v == header)
@@ -48,8 +48,8 @@ public class DList {
 	}
 
 	/**
-	 * Returns the node after the given node v. An error occurs if v is the
-	 * trailer
+	 * Retorna o nodo que segue um dado nodo V. Gera erro se V é o final
+	 * 
 	 */
 	public DNode getNext(DNode v) throws IllegalArgumentException {
 		if (v == trailer)
@@ -58,11 +58,11 @@ public class DList {
 	}
 
 	/**
-	 * Inserts the given node z before the given node v. An error occurs if v is
-	 * the header
+	 * insere um dado nodo Z antes de um dado nodo V. Gera um erro se V é a cabeça
+	 * 
 	 */
 	public void addBefore(DNode v, DNode z) throws IllegalArgumentException {
-		DNode u = getPrev(v); // may throw an IllegalArgumentException
+		DNode u = getPrev(v); // Deve lançar uma IllegalArgumentException
 		z.setPrev(u);
 		z.setNext(v);
 		v.setPrev(z);
@@ -71,11 +71,11 @@ public class DList {
 	}
 
 	/**
-	 * Inserts the given node z after the given node v. An error occurs if v is
-	 * the trailer
+	 * Insere um dado nodo Z depois de uma dado nodo V. Gera um erro se V é o final
+	 * 
 	 */
 	public void addAfter(DNode v, DNode z) {
-		DNode w = getNext(v); // may throw an IllegalArgumentException
+		DNode w = getNext(v); // Deve lançar uma IllegalArgumentException
 		z.setPrev(v);
 		z.setNext(w);
 		w.setPrev(z);
@@ -83,24 +83,24 @@ public class DList {
 		size++;
 	}
 
-	/** Inserts the given node at the head of the list */
+	/** Insere o nodo fornecido no início da lista */
 	public void addFirst(DNode v) {
 		addAfter(header, v);
 	}
 
-	/** Inserts the given node at the tail of the list */
+	/** insere o nodo fornecido no fim da lista */
 	public void addLast(DNode v) {
 		addBefore(trailer, v);
 	}
 
 	/**
-	 * Removes the given node v from the list. An error occurs if v is the
-	 * header or trailer
+	 * Remove um dado nodo V da lista. Gera um erro se V é a cabeça ou o final
+	 * 
 	 */
 	public void remove(DNode v) {
-		DNode u = getPrev(v); // may throw an IllegalArgumentException
-		DNode w = getNext(v); // may throw an IllegalArgumentException
-		// unlink the node from the list
+		DNode u = getPrev(v); // Deve lançar uma  IllegalArgumentException
+		DNode w = getNext(v); // Deve lançar uma  IllegalArgumentException
+		// Desconecta o nodo da lista
 		w.setPrev(u);
 		u.setNext(w);
 		v.setPrev(null);
@@ -108,17 +108,17 @@ public class DList {
 		size--;
 	}
 
-	/** Returns whether a given node has a previous node */
+	/** indica se o nodo indicado possui um antecessor */
 	public boolean hasPrev(DNode v) {
 		return v != header;
 	}
 
-	/** Returns whether a given node has a next node */
+	/** indica se o nodo indicado possui um sucessor */
 	public boolean hasNext(DNode v) {
 		return v != trailer;
 	}
 
-	/** Returns a string representation of the list */
+	/** Retorna uma representação string da lista */
 	public String toString() {
 		String s = "[";
 		DNode v = header.getNext();

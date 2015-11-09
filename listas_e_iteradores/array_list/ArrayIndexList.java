@@ -1,4 +1,6 @@
-package listas_e_Iteradores;
+package array_list;
+
+// #############  Array List #############
 
 /**
  * Realization of an indexed list by means of an array, which is doubled when

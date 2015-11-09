@@ -70,3 +70,9 @@
 
 > Portions of class ArrayIndexList realizing the array list ADT by means of an extendable array
 
+<p align="center">  ___ Node List ___  </p>
+
+##### :scissors: Interface Position
+
+> The node list ADT, with its built-in notion of position, is useful in a number of settings.
+

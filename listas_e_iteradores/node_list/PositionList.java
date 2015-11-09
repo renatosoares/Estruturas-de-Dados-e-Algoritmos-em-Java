@@ -1,6 +1,6 @@
 package node_list;
 
-public interface PositionList<E> {
+public interface PositionList<E> extends Iterable<E> {
 
 	/** Returns the number of elements in this list. */
 	public int size();

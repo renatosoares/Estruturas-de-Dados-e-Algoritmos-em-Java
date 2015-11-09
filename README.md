@@ -58,4 +58,15 @@
 
 
 
+### :anchor: Listas e Iteradores
+
+<p align="center">  ___ Array List ___  </p>
+
+##### :scissors: A IndexList interface para o TAD Array list  
+
+> a Java interface, IndexList, that captures the main methods from the array list ADT. 
+
+##### :scissors: Classe ArrayIndexList
+
+> Portions of class ArrayIndexList realizing the array list ADT by means of an extendable array
 

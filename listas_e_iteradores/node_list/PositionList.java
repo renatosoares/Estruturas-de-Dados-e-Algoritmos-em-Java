@@ -8,8 +8,9 @@ public interface PositionList<E> extends Iterable<E> {
 	/** Returns whether the list is empty. */
 	public boolean isEmpty();
 
-	/** Returns the first node in the list. */
-	public Position<E> first();
+	/** Returns the first node in the list. 
+	 * @throws EmptyListException */
+	public Position<E> first() throws EmptyListException;
 
 	/** Returns the last node in the list. */
 	public Position<E> last();

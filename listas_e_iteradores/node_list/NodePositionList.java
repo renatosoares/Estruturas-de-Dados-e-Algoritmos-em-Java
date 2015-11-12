@@ -1,5 +1,9 @@
 package node_list;
 
+import java.util.Iterator;
+
+import javax.swing.text.ElementIterator;
+
 public class NodePositionList<E> implements PositionList<E> {
 	protected int numElts; // Number of elements in the list
 	protected DNode<E> header, trailer; // Special sentinels
@@ -139,5 +143,35 @@ public class NodePositionList<E> implements PositionList<E> {
 		}
 		s += "]";
 		return s;
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Position<E> last() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Position<E> next(Position<E> p) throws InvalidPositionException, BoundaryViolationException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addLast(E e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addAfter(Position<E> p, E e) throws InvalidPositionException {
+		// TODO Auto-generated method stub
+		
 	}
 }

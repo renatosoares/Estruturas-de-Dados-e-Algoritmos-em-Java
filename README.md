@@ -76,3 +76,16 @@
 
 > The node list ADT, with its built-in notion of position, is useful in a number of settings.
 
+<p align="center">  ___ Iterators ___  </p>
+
+##### :scissors: Implementando iteradores
+
+> Uma maneira de implementar um iterador para uma coleção de elemntos é criar uma "foto" da coleção e iterar sobre a mesma. Apresenta-se uma classe ElementIrerator que implementa a interface Iterator
+
+##### :scissors: List Iterators em Java
+
+> 	 __add(e):__ Add the element e at the current position of the iterator.  __hasNext():__	True if and only if there is an element after the current position of the iterator. __hasPrevious():__ True if and only if there is an element before the current position of the iterator. __previous():__ Return the element e before the current position and sets the current position to be before e. __next():__ Return the element e after the current position and sets the current position to be after e. __nextIndex():__ Return the index of the next element. __previousIndex():__ Return the index of the previous element. __set(e):__ Replace the element returned by the previous next or previous operation with e. __remove():__ Remove the element returned by the previous next or previous operation.
+
+========================================================================
+
+> :warning: Códigos imcompletos e com erros, apenas utilizados para esbolso acadêmico.

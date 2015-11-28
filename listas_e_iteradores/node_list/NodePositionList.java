@@ -1,5 +1,10 @@
 package node_list;
 
+import java.util.EmptyStackException;
+import java.util.Iterator;
+
+import iterators.ElementIterator;
+
 public class NodePositionList<E> implements PositionList<E> {
 	protected int numElts; // Number of elements in the list
 	protected DNode<E> header, trailer; // Special sentinels
@@ -44,9 +49,9 @@ public class NodePositionList<E> implements PositionList<E> {
 	}
 
 	/** Returns the first position in the list; O(1) time */
-	public Position<E> first() throws EmptyListException {
+	public Position<E> first() throws EmptyStackException {
 		if (isEmpty())
-			throw new EmptyListException("List is empty");
+			throw new Exception("List is empty");
 		return header.getNext();
 	}
 
@@ -113,13 +118,13 @@ public class NodePositionList<E> implements PositionList<E> {
 		return new ElementIterator<E>(this);
 	}
 
-	/** Returns an iterable collection of all the nodes in the list. */
-	public Iterable<Position<E>> positions() { // create a list of posiitons
+	/** Retorna uma coleção iteravel de todos os nodos da lista. */
+	public Iterable<Position<E>> positions() { // Cria uma lista de posições
 		PositionList<Position<E>> P = new NodePositionList<Position<E>>();
 		if (!isEmpty()) {
 			Position<E> p = first();
 			while (true) {
-				P.addLast(p); // add position p as the last element of list P
+				P.addLast(p); // acrescenta a posição p como último elemento da lista P
 				if (p == last())
 					break;
 				p = next(p);
@@ -139,5 +144,31 @@ public class NodePositionList<E> implements PositionList<E> {
 		}
 		s += "]";
 		return s;
+	}
+
+
+
+	@Override
+	public Position<E> last() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Position<E> next(Position<E> p) /*throws InvalidPositionException, BoundaryViolationException*/ {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addLast(E e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addAfter(Position<E> p, E e) throws InvalidPositionException {
+		// TODO Auto-generated method stub
+		
 	}
 }

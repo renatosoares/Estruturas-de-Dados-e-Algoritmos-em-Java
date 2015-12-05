@@ -4,6 +4,7 @@ import java.util.EmptyStackException;
 import java.util.Iterator;
 
 import iterators.ElementIterator;
+import tree.InvalidPositionException;
 
 public class NodePositionList<E> implements PositionList<E> {
 	protected int numElts; // Number of elements in the list

@@ -1,8 +1,16 @@
 package node_list;
 
+<<<<<<< HEAD
 import java.util.Iterator;
 
 import javax.swing.text.ElementIterator;
+=======
+import java.util.EmptyStackException;
+import java.util.Iterator;
+
+import iterators.ElementIterator;
+import tree.InvalidPositionException;
+>>>>>>> 572ba876582ffba9c789d9a0914b4c5eebe87d10
 
 public class NodePositionList<E> implements PositionList<E> {
 	protected int numElts; // Number of elements in the list
@@ -48,9 +56,9 @@ public class NodePositionList<E> implements PositionList<E> {
 	}
 
 	/** Returns the first position in the list; O(1) time */
-	public Position<E> first() throws EmptyListException {
+	public Position<E> first() throws EmptyStackException {
 		if (isEmpty())
-			throw new EmptyListException("List is empty");
+			throw new Exception("List is empty");
 		return header.getNext();
 	}
 
@@ -117,13 +125,13 @@ public class NodePositionList<E> implements PositionList<E> {
 		return new ElementIterator<E>(this);
 	}
 
-	/** Returns an iterable collection of all the nodes in the list. */
-	public Iterable<Position<E>> positions() { // create a list of posiitons
+	/** Retorna uma coleção iteravel de todos os nodos da lista. */
+	public Iterable<Position<E>> positions() { // Cria uma lista de posições
 		PositionList<Position<E>> P = new NodePositionList<Position<E>>();
 		if (!isEmpty()) {
 			Position<E> p = first();
 			while (true) {
-				P.addLast(p); // add position p as the last element of list P
+				P.addLast(p); // acrescenta a posição p como último elemento da lista P
 				if (p == last())
 					break;
 				p = next(p);
@@ -145,11 +153,15 @@ public class NodePositionList<E> implements PositionList<E> {
 		return s;
 	}
 
+<<<<<<< HEAD
 	@Override
 	public Iterator<E> iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+=======
+
+>>>>>>> 572ba876582ffba9c789d9a0914b4c5eebe87d10
 
 	@Override
 	public Position<E> last() {
@@ -158,7 +170,11 @@ public class NodePositionList<E> implements PositionList<E> {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Position<E> next(Position<E> p) throws InvalidPositionException, BoundaryViolationException {
+=======
+	public Position<E> next(Position<E> p) /*throws InvalidPositionException, BoundaryViolationException*/ {
+>>>>>>> 572ba876582ffba9c789d9a0914b4c5eebe87d10
 		// TODO Auto-generated method stub
 		return null;
 	}

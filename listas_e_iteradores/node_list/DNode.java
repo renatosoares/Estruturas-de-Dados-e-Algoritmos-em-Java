@@ -1,5 +1,7 @@
 package node_list;
 
+import tree.InvalidPositionException;
+
 public class DNode<E> implements Position<E> {
 	private DNode<E> prev, next; // References to the nodes before and after
 	private E element; // Element stored in this position

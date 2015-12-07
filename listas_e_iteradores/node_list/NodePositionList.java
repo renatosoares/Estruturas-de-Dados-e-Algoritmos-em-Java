@@ -1,16 +1,13 @@
 package node_list;
 
-<<<<<<< HEAD
-import java.util.Iterator;
 
 import javax.swing.text.ElementIterator;
-=======
+
 import java.util.EmptyStackException;
 import java.util.Iterator;
 
-import iterators.ElementIterator;
 import tree.InvalidPositionException;
->>>>>>> 572ba876582ffba9c789d9a0914b4c5eebe87d10
+
 
 public class NodePositionList<E> implements PositionList<E> {
 	protected int numElts; // Number of elements in the list
